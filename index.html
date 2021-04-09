@@ -22,14 +22,19 @@
 		<div id="skill-list">
 
 			<!-- dobra ganho por clique -->
-			<button class="skill-button" onclick="button2xAcition()">2x</button>
+			<button class="skill-button" onmouseover="show2XDesc()" onmouseout="hideDesc()"
+				onclick="button2xAcition()">2x</button>
+
 			<!-- aumenta em 10x os proximos 100 cliques-->
-			<button class="skill-button" onclick="button10xAction()">10x (100 clicks)</button>
+			<button class="skill-button" onmouseover="show10XDesc()" onmouseout="hideDesc()"
+				onclick="button10xAction()">10x (100 clicks)</button>
+
 			<!-- reseta aumentando 10x o ganho inicial -->
-			<button class="skill-button" onclick="buttonMasterResetAction()">Master Reset</button>
+			<button class="skill-button" onmouseover="showMasterResetDesc()" onmouseout="hideDesc()"
+				onclick="buttonMasterResetAction()">Master Reset</button>
 
 		</div>
-		<p id="button-description">button button-description</p>
+		<p id="button-description"></p>
 	</div>
 
 	<script src="script.js"></script>
