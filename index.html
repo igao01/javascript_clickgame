@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Click Game</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="config.js"></script>
+</head>
+
+<body>
+
+	<div id="div-body">
+		<h1 id="page-title">Click Game</h1>
+
+		<h3 id="amount">0000</h3>
+
+		<span id="clickme-span"><button id="clickme-button" onclick="clickMeAction()">Clique Aqui</button></span>
+
+		<div id="skill-list">
+
+			<!-- dobra ganho por clique -->
+			<button class="skill-button" onclick="button2xAcition()">2x</button>
+			<!-- aumenta em 10x os proximos 100 cliques-->
+			<button class="skill-button" onclick="button10xAction()">10x (100 clicks)</button>
+			<!-- reseta aumentando 10x o ganho inicial -->
+			<button class="skill-button" onclick="buttonMasterResetAction()">Master Reset</button>
+
+		</div>
+		<p id="button-description">button button-description</p>
+	</div>
+
+	<script src="script.js"></script>
+	<script src="config.js"></script>
+</body>
+
+</html>
