@@ -1,9 +1,9 @@
 let buttonDesc = document.getElementById("button-description");
 let amount = document.getElementById("amount");
+setDarkTheme();
 
 //CLICK ME ACTION
 function clickMeAction () {
-
 
 	//VERIFICA QUANTIDADE DE CLIQUE DO 10X
 	if (count10Xclick >= 19) {
@@ -161,3 +161,19 @@ function showMasterResetDesc () {
 function hideDesc () {
 	buttonDesc.innerHTML = "";
 }
+
+// TEMAS
+function changeTheme () {
+	// 0 - Light
+	// 1 - Dark
+
+	if (theme == 0) {
+		//MUDA PARA ESCURO
+		theme = Math.abs(theme -= 1);
+		setDarkTheme();
+	} else {
+		theme = Math.abs(theme -= 1);
+		setLightTheme();
+	}
+}
+setLightTheme();

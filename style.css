@@ -1,6 +1,4 @@
 body{
-	color: rgb(219, 219, 219);
-	background: rgb(32, 32, 32);
 	font-size: 28px;
 	display: flex;
 	justify-content:center;
@@ -25,7 +23,7 @@ body{
 	justify-content:center;
 }
 
-#clickme-span, #button-description{
+#clickme-span, #button-description, #theme{
 	display: flex;
 	justify-content:center;
 }
@@ -40,8 +38,6 @@ body{
 	padding: 15px;
 	font-size: 28px;
 	margin-bottom: 20px;
-	background-color:rgb(49, 49, 49);
-	color: rgb(238, 167, 101);
 	border: 1px rgb(82, 82, 82) solid;
 }
 
@@ -62,7 +58,13 @@ ul{
 	width: 250px;
 	font-size: 28px;
 	margin-right: 10px;
-	background-color:rgb(49, 49, 49);
-	color: rgb(122, 213, 219);
+	border: 1px rgb(82, 82, 82) solid;
+}
+
+#theme-button{
+	padding: 5px;
+	width: 150px;
+	font-size: 18px;
+	margin-right: 10px;
 	border: 1px rgb(82, 82, 82) solid;
 }
