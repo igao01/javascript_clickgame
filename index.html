@@ -15,19 +15,20 @@
 	<div id="div-body">
 		<h1 id="page-title">Click Game</h1>
 
-		<h3 id="amount">0000</h3>
+		<h3 id="amount">0000000000</h3>
 
-		<span id="clickme-span"><button id="clickme-button" onclick="clickMeAction()">Clique Aqui</button></span>
+		<span id="clickme-span"><button id="clickme-button" onclick="clickMeAction()">Clique
+				Aqui</button></span>
 
 		<div id="skill-list">
+			<!-- aumenta em 10x os proximos 100 cliques-->
+			<button class="skill-button" onmouseover="show10XDesc()" onmouseout="hideDesc()"
+				onclick="button10XAction()">10x
+				(100 clicks)</button>
 
 			<!-- dobra ganho por clique -->
 			<button class="skill-button" onmouseover="show2XDesc()" onmouseout="hideDesc()"
 				onclick="button2XAction()">2x</button>
-
-			<!-- aumenta em 10x os proximos 100 cliques-->
-			<button class="skill-button" onmouseover="show10XDesc()" onmouseout="hideDesc()"
-				onclick="button10XAction()">10x (100 clicks)</button>
 
 			<!-- reseta aumentando 10x o ganho inicial -->
 			<button class="skill-button" onmouseover="showMasterResetDesc()" onmouseout="hideDesc()"
@@ -35,6 +36,7 @@
 
 		</div>
 		<p id="button-description"></p>
+		<h3 id="best">Best: 0000000000</h3>
 	</div>
 
 	<script src="script.js"></script>
