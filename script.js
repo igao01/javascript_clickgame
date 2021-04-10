@@ -30,11 +30,10 @@ function clickMeAction () {
 // 2X ACTION
 function button2XAction () {
 
-	if (currentAmount >= current2XPrice) {
-		currentAmount -= current2XPrice; //subtrai o preco do 2X do valor total
+	if (currentAmount >= next2XPrice) {
+		currentAmount -= next2XPrice; //subtrai o preco do 2X do valor total
 		count2X = count2X * 2;
-		next2XPrice = current2XPrice * 3;
-		current2XPrice = next2XPrice;
+		next2XPrice = next2XPrice * 3;
 
 		//ATUALIZA OS PONTOS
 		amount.innerHTML = currentAmount;
@@ -44,7 +43,7 @@ function button2XAction () {
 		console.log("Proximo valor do count2X: " + count2X);
 
 	} else {
-		alert("Você precisa de " + current2XPrice + " pontos para utilizar o 2X")
+		alert("Você precisa de " + next2XPrice + " pontos para utilizar o 2X")
 	}
 }
 
@@ -52,12 +51,11 @@ function button2XAction () {
 function button10XAction () {
 
 	if (!is10XActive) {
-		if (currentAmount >= current10XPrice) {
-			currentAmount -= current10XPrice;
+		if (currentAmount >= next10XPrice) {
+			currentAmount -= next10XPrice;
 			is10XActive = true;
 			count10Xclick = 0;
-			next10XPrice = getClickValue() * 50 + current10XPrice * 3;
-			current10XPrice = next10XPrice;
+			next10XPrice = getClickValue() * 50 + next10XPrice * 3;
 
 			//ATUALIZA OS PONTOS
 			amount.innerHTML = currentAmount;
@@ -65,7 +63,7 @@ function button10XAction () {
 			// LOG
 			console.log("Proximo valor do 10X: " + next10XPrice);
 		} else {
-			alert("Você precisa de " + current10XPrice + " pontos para utilizar o 10X")
+			alert("Você precisa de " + next10XPrice + " pontos para utilizar o 10X")
 		}
 	} else {
 		alert("10X ja está ativo");
@@ -76,14 +74,13 @@ function button10XAction () {
 // MASTER RESET ACTION
 function buttonMasterResetAction () {
 
-	if (currentAmount >= currentMasterResetPrice) {
+	if (currentAmount >= nextMasterResetPrice) {
 
 		// RESETA AS VARIAVEIS
 		restartValues();
 
 		countMasterReset++;
-		nextMasterResetPrice = currentMasterResetPrice * 15;
-		currentMasterResetPrice = nextMasterResetPrice;
+		nextMasterResetPrice = nextMasterResetPrice * 15;
 
 		//ATUALIZA OS PONTOS
 		amount.innerHTML = currentAmount;
@@ -92,7 +89,7 @@ function buttonMasterResetAction () {
 		console.log("Proximo valor do MasterReset: " + nextMasterResetPrice);
 		console.log("countMasterReset: " + countMasterReset);
 	} else {
-		alert("Você precisa de " + currentMasterResetPrice + " pontos para utilizar o Master Reset")
+		alert("Você precisa de " + nextMasterResetPrice + " pontos para utilizar o Master Reset")
 	}
 }
 
@@ -138,24 +135,24 @@ function getClickValue () {
 function restartValues () {
 	currentAmount = 0;
 	count2X = 1;
-	current2XPrice = first2XPrice;
-	current10XPrice = first10XPrice;
+	next2XPrice = first2XPrice;
+	next10XPrice = first10XPrice;
 	count10Xclick = 0;
 	is10XActive = false;
 }
 // DESCRICAO DO BOTAO 2X
 function show2XDesc () {
-	buttonDesc.innerHTML = "Multiplique por 2 os pontos ganhos por clique <br> Compre por (" + current2XPrice + ") pontos";
+	buttonDesc.innerHTML = "Multiplique por 2 os pontos ganhos por clique <br> Compre por (" + next2XPrice + ") pontos";
 }
 
 // DESCRICAO DO BOTAO 10X
 function show10XDesc () {
-	buttonDesc.innerHTML = "Multiplique por 10 os pontos ganhos nos próximos 20 cliques <br> Compre por (" + current10XPrice + ") pontos";
+	buttonDesc.innerHTML = "Multiplique por 10 os pontos ganhos nos próximos 20 cliques <br> Compre por (" + next10XPrice + ") pontos";
 }
 
 // DESCRICAO DO BOTAO MASTER RESET
 function showMasterResetDesc () {
-	buttonDesc.innerHTML = "Zere seus pontos e multiplique por 10 os ganhos por clique <br> Compre por (" + currentMasterResetPrice + ") pontos";
+	buttonDesc.innerHTML = "Zere seus pontos e multiplique por 10 os ganhos por clique <br> Compre por (" + nextMasterResetPrice + ") pontos";
 }
 
 function hideDesc () {
